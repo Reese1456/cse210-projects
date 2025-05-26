@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 
 /*
 Entry
@@ -16,8 +15,18 @@ public class Entry
     public string _promptText;
     public string _entryText;
 
-    void Display()
+    public Entry(string date, string prompt, string text)
     {
+        _date = date;
+        _promptText = prompt;
+        _entryText = text;
+    }
 
+    public void Display()
+    {
+        Console.WriteLine($"Date: {_date}");
+        Console.WriteLine($"Prompt: {_promptText}");
+        Console.WriteLine($"Entry: {_entryText}");
+        Console.WriteLine();
     }
 }
